@@ -5,13 +5,13 @@ var binarySearch = function(arr, target){
   var element;
 
   while(minIndex <= maxIndex){
-    mid = Math.floor(arr.length / 2);
+    mid = Math.floor((minIndex + maxIndex) / 2);
     element = arr[mid];
     if(element < target){
-      mid = minIndex + 1;
+      minIndex = mid + 1;
     }
     if(element > target){
-      mid = maxIndex - 1;
+      maxIndex = mid - 1;
     }
     if(element === target){
       return mid
